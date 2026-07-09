@@ -1,0 +1,99 @@
+version: "3.9"
+
+# SupplyMind AI – Production Docker Compose
+# Usage: docker-compose -f docker-compose.prod.yml up -d
+# All secrets must be provided via environment or Docker secrets.
+
+services:
+  # ── Backend API ───────────────────────────────────────────────────────────
+  api:
+    build:
+      context: ../backend
+      dockerfile: ../docker/Dockerfile.backend
+      target: production
+    image: supplymind-api:${IMAGE_TAG:-latest}
+    container_name: supplymind_api_prod
+    restart: always
+    environment:
+      NODE_ENV: production
+      PORT: 5000
+      MONGODB_URI: ${MONGODB_URI}
+      DATABASE_URL: ${DATABASE_URL}
+      REDIS_URL: ${REDIS_URL}
+      JWT_ACCESS_SECRET: ${JWT_ACCESS_SECRET}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET}
+      CLIENT_URL: ${CLIENT_URL}
+      ALLOWED_ORIGINS: ${ALLOWED_ORIGINS}
+    expose:
+      - "5000"
+    volumes:
+      - api_uploads:/app/uploads
+      - api_logs:/app/logs
+    networks:
+      - supplymind_prod_network
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          cpus: "0.25"
+          memory: 128M
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # ── Frontend ──────────────────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: ../docker/Dockerfile.frontend
+      target: production
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
+        NEXT_PUBLIC_MAPBOX_TOKEN: ${NEXT_PUBLIC_MAPBOX_TOKEN}
+        NEXT_PUBLIC_APP_ENV: production
+    image: supplymind-frontend:${IMAGE_TAG:-latest}
+    container_name: supplymind_frontend_prod
+    restart: always
+    expose:
+      - "3000"
+    networks:
+      - supplymind_prod_network
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+
+  # ── Nginx Reverse Proxy ───────────────────────────────────────────────────
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: supplymind_nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/ssl:/etc/nginx/ssl:ro
+      - nginx_logs:/var/log/nginx
+    depends_on:
+      - frontend
+      - api
+    networks:
+      - supplymind_prod_network
+
+# ── Volumes ───────────────────────────────────────────────────────────────────
+volumes:
+  api_uploads:
+  api_logs:
+  nginx_logs:
+
+# ── Networks ──────────────────────────────────────────────────────────────────
+networks:
+  supplymind_prod_network:
+    driver: bridge

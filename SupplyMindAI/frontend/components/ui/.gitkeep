@@ -1,0 +1,4 @@
+# This directory is populated by the Shadcn UI CLI.
+# Run: npx shadcn@latest init
+# Then: npx shadcn@latest add <component>
+# Do NOT edit generated files manually.
