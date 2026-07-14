@@ -1,10 +1,18 @@
 import app from "./app";
 import { logger } from "./lib/logger";
 
-const rawPort = process.env["PORT"];
+export default app;
 
-// Vercel / Replit / local all provide PORT at runtime.
-if (rawPort) {
+// Local / Replit / non-Vercel hosts still bind a port.
+if (!process.env.VERCEL) {
+  const rawPort = process.env["PORT"];
+
+  if (!rawPort) {
+    throw new Error(
+      "PORT environment variable is required but was not provided.",
+    );
+  }
+
   const port = Number(rawPort);
 
   if (Number.isNaN(port) || port <= 0) {
@@ -20,5 +28,3 @@ if (rawPort) {
     logger.info({ port }, "Server listening");
   });
 }
-
-export default app;
