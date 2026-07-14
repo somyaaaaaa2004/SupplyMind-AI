@@ -1,5 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "cd ../.. && pnpm install",
+  "installCommand": "cd ../.. && pnpm install --filter @workspace/api-server...",
   "buildCommand": "cd ../.. && pnpm --filter @workspace/api-server run typecheck && pnpm --filter @workspace/api-server run build"
 }
