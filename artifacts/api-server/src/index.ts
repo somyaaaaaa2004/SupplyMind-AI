@@ -1,18 +1,10 @@
 import app from "./app";
 import { logger } from "./lib/logger";
 
-// On Vercel the platform invokes the Express app directly; do not bind a port.
-const isServerless = Boolean(process.env.VERCEL);
+const rawPort = process.env["PORT"];
 
-if (!isServerless) {
-  const rawPort = process.env["PORT"];
-
-  if (!rawPort) {
-    throw new Error(
-      "PORT environment variable is required but was not provided.",
-    );
-  }
-
+// Vercel / Replit / local all provide PORT at runtime.
+if (rawPort) {
   const port = Number(rawPort);
 
   if (Number.isNaN(port) || port <= 0) {
