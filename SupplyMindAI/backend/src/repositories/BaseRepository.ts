@@ -36,7 +36,7 @@ export class BaseRepository<T extends Document> {
     const [data, total] = await Promise.all([
       this.model
         .find(query)
-        .sort({ [sort]: sortDir } as Record<string, number>)
+        .sort({ [sort]: sortDir } as { [key: string]: 1 | -1 })
         .skip(skip)
         .limit(limit)
         .exec(),

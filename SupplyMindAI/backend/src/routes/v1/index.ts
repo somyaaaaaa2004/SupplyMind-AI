@@ -3,9 +3,9 @@
  * Each domain owns its own router file — import and mount them here.
  */
 
-import { Router } from "express";
+import { Router, type IRouter } from "express";
 
-export const v1Router = Router();
+export const v1Router: IRouter = Router();
 
 // ── Docs ─────────────────────────────────────────────────────────────────────
 v1Router.get("/", (_req, res) => {

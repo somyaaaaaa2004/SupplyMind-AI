@@ -3,11 +3,11 @@
  * Mounts all versioned route groups.
  */
 
-import { Router } from "express";
+import { Router, type IRouter } from "express";
 
 import { v1Router } from "./v1";
 
-export const router = Router();
+export const router: IRouter = Router();
 
 // Mount v1 routes (the /api/v1 prefix is applied in app.ts)
 router.use("/", v1Router);

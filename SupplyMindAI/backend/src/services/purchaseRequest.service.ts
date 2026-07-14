@@ -188,7 +188,7 @@ export const purchaseRequestService = {
     return pr.toJSON();
   },
 
-  async destroy(id: string, orgId: string) {
+  async destroy(id: string, _orgId: string) {
     const pr = await purchaseRequestRepository.deleteById(id);
     if (!pr) throw ApiError.notFound("Purchase Request");
     return pr.toJSON();
