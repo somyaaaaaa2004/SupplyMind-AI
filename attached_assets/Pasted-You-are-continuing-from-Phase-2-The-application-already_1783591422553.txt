@@ -1,0 +1,804 @@
+You are continuing from Phase 2.
+
+The application already has:
+
+• Authentication
+• Database
+• User Profiles
+• Friend System
+• Invite System
+• Communities
+• Notifications
+• Real-time Infrastructure
+
+Now transform the application into a complete challenge-based social platform.
+
+Nothing should be static.
+
+Everything must be connected to PostgreSQL.
+
+Every button must work.
+
+No placeholder data.
+
+No fake statistics.
+
+--------------------------------------------------
+
+PRIMARY GOAL
+
+Build a production-ready Challenge Management System with gamification.
+
+Users should feel motivated to return every day.
+
+Everything should update in real time.
+
+--------------------------------------------------
+
+REMOVE STATIC DASHBOARD
+
+The current dashboard looks like a template.
+
+Completely redesign it.
+
+Every statistic must come from the database.
+
+Every widget must be functional.
+
+No hardcoded values.
+
+--------------------------------------------------
+
+PERSONAL DASHBOARD
+
+The dashboard should include:
+
+Today's Progress
+
+Daily Goals
+
+Current Streak
+
+Longest Streak
+
+Weekly Activity
+
+Monthly Activity
+
+XP Progress
+
+Level Progress
+
+Upcoming Challenges
+
+Active Challenges
+
+Recently Completed Challenges
+
+Achievement Progress
+
+Recent Notifications
+
+Friend Activity
+
+Community Activity
+
+Suggested Challenges
+
+Suggested Communities
+
+Suggested Friends
+
+Quick Actions
+
+Calendar
+
+Productivity Summary
+
+Performance Insights
+
+Weekly Report
+
+Everything should update live.
+
+--------------------------------------------------
+
+CHALLENGE SYSTEM
+
+Replace the fake challenge system.
+
+Users should be able to:
+
+Create Challenge
+
+Edit Challenge
+
+Delete Challenge
+
+Duplicate Challenge
+
+Join Challenge
+
+Leave Challenge
+
+Pause Challenge
+
+Resume Challenge
+
+Complete Challenge
+
+Invite Friends
+
+Invite Community
+
+Share Challenge
+
+Bookmark Challenge
+
+Report Challenge
+
+Challenge Categories:
+
+Fitness
+
+Study
+
+Reading
+
+Coding
+
+Meditation
+
+Running
+
+Cycling
+
+Health
+
+Water Intake
+
+Sleep
+
+Personal Goals
+
+Custom
+
+--------------------------------------------------
+
+CHALLENGE TYPES
+
+Support multiple challenge formats.
+
+One-Time
+
+Daily
+
+Weekly
+
+Monthly
+
+Custom Date
+
+Time Based
+
+Progress Based
+
+Milestone Based
+
+Competitive
+
+Collaborative
+
+Private
+
+Public
+
+Friends Only
+
+Community Only
+
+--------------------------------------------------
+
+CHALLENGE DETAILS
+
+Each challenge should contain:
+
+Title
+
+Description
+
+Banner
+
+Icon
+
+Category
+
+Difficulty
+
+Start Date
+
+End Date
+
+Duration
+
+Goal
+
+Rules
+
+Rewards
+
+XP Reward
+
+Badge Reward
+
+Creator
+
+Participants
+
+Completion %
+
+Current Progress
+
+Comments
+
+Likes
+
+Bookmarks
+
+Reports
+
+--------------------------------------------------
+
+PROGRESS TRACKING
+
+Allow users to:
+
+Update Progress
+
+Upload Proof
+
+Attach Images
+
+Write Notes
+
+Daily Check-in
+
+Miss Day
+
+Resume Progress
+
+Undo Check-in
+
+View Progress History
+
+Progress should automatically calculate:
+
+Completion Percentage
+
+Remaining Days
+
+XP Earned
+
+Estimated Finish Date
+
+--------------------------------------------------
+
+STREAK SYSTEM
+
+Implement a production-ready streak engine.
+
+Track:
+
+Current Streak
+
+Longest Streak
+
+Broken Streak
+
+Recovery Token
+
+Daily Check-ins
+
+Weekly Consistency
+
+Monthly Consistency
+
+Yearly Activity
+
+Show beautiful streak animations.
+
+--------------------------------------------------
+
+XP SYSTEM
+
+Users earn XP for:
+
+Completing Challenges
+
+Daily Login
+
+Helping Friends
+
+Community Participation
+
+Challenge Creation
+
+Comments
+
+Receiving Likes
+
+Inviting Friends
+
+Successful Referrals
+
+Daily Streak
+
+Weekly Goals
+
+Monthly Goals
+
+XP should automatically update:
+
+Level
+
+Leaderboard
+
+Achievements
+
+Profile
+
+Dashboard
+
+--------------------------------------------------
+
+LEVEL SYSTEM
+
+Implement level progression.
+
+Each level requires increasing XP.
+
+Unlock:
+
+Badges
+
+Profile Frames
+
+Achievements
+
+Special Titles
+
+Premium Themes
+
+Animations
+
+--------------------------------------------------
+
+ACHIEVEMENTS
+
+Build a complete achievement engine.
+
+Examples:
+
+First Login
+
+First Friend
+
+First Community
+
+First Challenge
+
+10 Challenges
+
+100 Challenges
+
+7 Day Streak
+
+30 Day Streak
+
+100 Day Streak
+
+Invite 5 Friends
+
+Invite 25 Friends
+
+Community Leader
+
+Top Performer
+
+Helpful Member
+
+Early Adopter
+
+Perfect Week
+
+Perfect Month
+
+Every achievement should have:
+
+Icon
+
+Description
+
+XP Reward
+
+Unlock Date
+
+Progress Bar
+
+--------------------------------------------------
+
+LEADERBOARDS
+
+Replace static rankings.
+
+Create:
+
+Global Leaderboard
+
+Friends Leaderboard
+
+Community Leaderboard
+
+Weekly
+
+Monthly
+
+Yearly
+
+All Time
+
+Rank users using:
+
+XP
+
+Streak
+
+Challenges Completed
+
+Activity Score
+
+Referral Score
+
+Community Score
+
+Support:
+
+Pagination
+
+Filtering
+
+Searching
+
+--------------------------------------------------
+
+ACTIVITY FEED
+
+Create a social feed.
+
+Show:
+
+Friend Joined
+
+Friend Completed Challenge
+
+Friend Earned Badge
+
+Community Created
+
+Community Event
+
+Achievement Unlocked
+
+Challenge Started
+
+Challenge Finished
+
+Challenge Shared
+
+Comment Added
+
+Like Received
+
+Referral Joined
+
+Feed should support:
+
+Likes
+
+Comments
+
+Reactions
+
+Infinite Scroll
+
+Pagination
+
+Filtering
+
+--------------------------------------------------
+
+CALENDAR
+
+Build a challenge calendar.
+
+Show:
+
+Today's Tasks
+
+Upcoming Challenges
+
+Completed Days
+
+Missed Days
+
+Achievements
+
+Events
+
+Birthdays (optional)
+
+--------------------------------------------------
+
+INSIGHTS
+
+Generate user analytics.
+
+Daily Productivity
+
+Weekly Productivity
+
+Monthly Productivity
+
+Challenge Success Rate
+
+Most Active Day
+
+Most Active Time
+
+Favorite Category
+
+Completion Rate
+
+Consistency Score
+
+Referral Performance
+
+Community Participation
+
+Friend Activity
+
+--------------------------------------------------
+
+ANALYTICS DASHBOARD
+
+Beautiful charts.
+
+Use real data.
+
+Include:
+
+XP Growth
+
+Challenge Completion
+
+Weekly Activity
+
+Monthly Activity
+
+Streak History
+
+Referral Growth
+
+Community Growth
+
+Leaderboard Position
+
+Do not use fake charts.
+
+--------------------------------------------------
+
+RECOMMENDATION ENGINE
+
+Suggest:
+
+Friends
+
+Communities
+
+Challenges
+
+Based on:
+
+Interests
+
+Activity
+
+Mutual Friends
+
+Categories
+
+History
+
+--------------------------------------------------
+
+SEARCH
+
+Search:
+
+Challenges
+
+Achievements
+
+Communities
+
+Friends
+
+Posts
+
+Users
+
+Everything should have:
+
+Filters
+
+Sorting
+
+Pagination
+
+--------------------------------------------------
+
+NOTIFICATIONS
+
+Create new notification types.
+
+Challenge Reminder
+
+Challenge Completed
+
+Friend Progress
+
+Leaderboard Position
+
+Achievement Unlocked
+
+Daily Goal Reminder
+
+Weekly Summary
+
+Community Challenge
+
+--------------------------------------------------
+
+REAL-TIME
+
+Update instantly:
+
+Challenge Progress
+
+Leaderboard
+
+XP
+
+Achievements
+
+Dashboard
+
+Activity Feed
+
+Notifications
+
+--------------------------------------------------
+
+UI IMPROVEMENTS
+
+Redesign everything.
+
+Beautiful dashboard.
+
+Premium cards.
+
+Modern widgets.
+
+Smooth animations.
+
+Loading Skeletons.
+
+Empty States.
+
+Success Animations.
+
+Progress Rings.
+
+Circular Charts.
+
+Interactive Graphs.
+
+Premium Typography.
+
+Responsive Design.
+
+Dark Mode.
+
+--------------------------------------------------
+
+DATABASE
+
+Create proper relational tables.
+
+Challenge History
+
+Progress Logs
+
+Achievements
+
+XP History
+
+Leaderboard History
+
+Activity Feed
+
+Analytics
+
+Recommendations
+
+Indexes
+
+Constraints
+
+--------------------------------------------------
+
+API
+
+Create production APIs.
+
+Challenge APIs
+
+Progress APIs
+
+XP APIs
+
+Leaderboard APIs
+
+Analytics APIs
+
+Achievement APIs
+
+Recommendation APIs
+
+Everything documented.
+
+--------------------------------------------------
+
+QUALITY ASSURANCE
+
+Verify:
+
+Dashboard uses real data.
+
+Challenges work.
+
+Progress updates.
+
+XP updates.
+
+Leaderboards update.
+
+Achievements unlock.
+
+Analytics calculate correctly.
+
+Activity Feed updates.
+
+No placeholder data exists.
+
+No fake statistics exist.
+
+Every button works.
+
+Every modal works.
+
+Every API works.
+
+Everything is production-ready.
+
+Do not stop until every feature has been completely implemented and tested.

@@ -20,10 +20,12 @@ const nextConfig: NextConfig = {
 
   // API proxy rewrites (development)
   async rewrites() {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL?.replace(/\/$/, '');
+    if (!apiUrl) return [];
     return [
       {
-        source: "/api/:path*",
-        destination: `${process.env.NEXT_PUBLIC_API_URL}/api/:path*`,
+        source: '/api/:path*',
+        destination: `${apiUrl}/api/:path*`,
       },
     ];
   },
