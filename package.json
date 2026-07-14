@@ -2,13 +2,14 @@
   "name": "workspace",
   "version": "0.0.0",
   "license": "MIT",
+  "private": true,
+  "packageManager": "pnpm@10.33.0",
   "scripts": {
-    "preinstall": "node -e \"try{require('fs').unlinkSync('package-lock.json')}catch(e){} try{require('fs').unlinkSync('yarn.lock')}catch(e){} const ua=process.env.npm_config_user_agent||''; if(!ua.includes('pnpm')){console.error('Use pnpm instead');process.exit(1)}\"",
+    "preinstall": "node -e \"try{require('fs').unlinkSync('package-lock.json')}catch(e){} try{require('fs').unlinkSync('yarn.lock')}catch(e){} const ua=process.env.npm_config_user_agent||''; const allow=ua.includes('pnpm')||process.env.VERCEL||process.env.CI; if(!allow){console.error('Use pnpm instead');process.exit(1)}\"",
     "build": "pnpm run typecheck && pnpm -r --if-present run build",
     "typecheck:libs": "tsc --build",
     "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
   },
-  "private": true,
   "dependencies": {
     "@replit/connectors-sdk": "^0.4.1"
   },
